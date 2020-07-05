@@ -62,7 +62,7 @@ class balenaPurpleHTTP(BaseHTTPRequestHandler):
 balenapurpleair = balenaPurpleAir()
 
 while True:
-    server_address = ('', 8080)
+    server_address = ('', 80)
     httpd = HTTPServer(server_address, balenaPurpleHTTP)
     print('Purple HTTP server running')
     httpd.serve_forever()
