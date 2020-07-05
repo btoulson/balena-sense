@@ -1,0 +1,14 @@
+FROM balenalib/raspberrypi3-python:3-build
+
+RUN install_packages \
+        unzip
+
+WORKDIR /usr/src/app
+
+RUN pip install json requests
+
+COPY ./scripts ./scripts
+COPY ./entry.sh /usr/src/app/
+RUN chmod +x /usr/src/app/entry.sh
+
+CMD ["./entry.sh"]
