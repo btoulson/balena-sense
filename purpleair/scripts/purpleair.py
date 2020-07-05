@@ -50,6 +50,7 @@ class balenaPurpleHTTP(BaseHTTPRequestHandler):
         API_ROOT = 'https://www.purpleair.com/json'
         id = 22079
         response = requests.get(f'{API_ROOT}?show={id}')
+        print(response)
         self.wfile.write(json.dumps(response[0]['results']).encode('UTF-8'))
         #measurements = balenasense.sample()
         #self.wfile.write(json.dumps(measurements[0]['fields']).encode('UTF-8'))
